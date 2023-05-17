@@ -6,12 +6,12 @@
         <th>内容</th>
     </tr>
     
+    <% @posts.each do |post| %>
     <tr>
-        <% @posts.each do |post| %>
-        <td><%= post.content %></td>
-        <td><%= link_to 'つぶやきを編集する',edit_post_path(post.id) %></td>
-        <td><%= link_to 'つぶやきを削除する',post_path(post.id),method: :delete,data: {confirm: '本当に削除してよろしいですか？'} %></td>
-        <% end %>
+            <td><%= post.content %></td>
+            <td><%= link_to 'つぶやきを編集する',edit_post_path(post.id) %></td>
+            <td><%= link_to 'つぶやきを削除する',post_path(post.id),method: :delete,data: {confirm: '本当に削除してよろしいですか？'} %></td>
     </tr>
+    <% end %>
 </table>
 <%= link_to 'つぶやきを作成する',new_post_path %>
