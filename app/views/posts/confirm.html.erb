@@ -1,0 +1,7 @@
+<h2>確認画面</h2>
+<%= form_with(model: @post,local: true,url: confirm_posts_path) do |form| %>
+    <%= form.hidden_field :content %>
+    
+    <p>内容:<%= @post.content %></p>
+    <%= form.submit '登録する' %>
+<% end %>
